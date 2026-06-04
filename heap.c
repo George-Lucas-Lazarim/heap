@@ -48,3 +48,8 @@ void insert (struct maxHeap* heap, int data) {
         i = parent(i);
     }
 }
+
+void printHeap (struct maxHeap* heap) {
+    printf("\n");
+    for (int i = 0; i < heap->size; i++) printf("%d ", heap->array[i]);
+}
