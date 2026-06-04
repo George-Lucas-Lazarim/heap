@@ -31,3 +31,20 @@ void swap (int *x, int *y) {
     *x = *y;
     *y = aux;
 }
+
+void insert (struct maxHeap* heap, int data) {
+    if (heap->size == heap->capacity) {
+        printf("\nError! It is not possible to add more data (maximum capacity reached)");
+        return;
+    }
+
+    int i = heap->size;
+    heap->array[i] = data;
+    heap->size++;
+
+    while (i != 0 && heap->array[parent(i)] < heap->array[i]) {
+        swap(&heap->array[parent(i)], &heap->array[i]);
+
+        i = parent(i);
+    }
+}

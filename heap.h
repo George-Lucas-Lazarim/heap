@@ -15,5 +15,6 @@ int parent (int i);
 int leftChild (int i);
 int rightChild (int i);
 void swap (int *x, int *y);
+void insert (struct maxHeap* heap, int data);
 
 #endif
